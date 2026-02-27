@@ -2,6 +2,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
 
 // Use different ports for dev vs prod to allow running both simultaneously
 // Dev: 7337 (frontend), 5437 (backend)
@@ -37,7 +39,7 @@ export default defineConfig(({ command }) => ({
   },
   css: {
     postcss: {
-      plugins: [require('tailwindcss'), require('autoprefixer')],
+      plugins: [tailwindcss, autoprefixer],
     },
   },
   optimizeDeps: {
